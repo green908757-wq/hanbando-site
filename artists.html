@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>초대작가 소개 | (사)한반도문화예술협회</title>
+<meta name="description" content="2026 제19회 한반도미술대전 초대작가 소개">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="index.html" aria-label="(사)한반도문화예술협회 홈">
+      <img src="images/19-image1/한반도 로고.jpg" alt="(사)한반도문화예술협회">
+    </a>
+    <nav class="gnb" aria-label="주 메뉴">
+      <ul>
+        <li><a href="greeting.html">협회소개</a></li>
+        <li><a href="awards.html">수상작</a></li>
+        <li><a href="artists.html" aria-current="page">초대작가</a></li>
+        <li><a href="notice.html">공지사항</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<section class="title-band">
+  <div class="container">
+    <h1>초대작가 소개</h1>
+    <nav class="year-tabs" aria-label="회차 선택">
+      <a href="artists-works.html" class="is-current" aria-current="true" title="2026 제19회 한반도미술대전 초대작가 전시작품 보기">제19회</a>
+      <span aria-disabled="true" title="준비 중">제20회</span>
+      <span aria-disabled="true" title="준비 중">제21회</span>
+      <span aria-disabled="true" title="준비 중">제22회</span>
+      <span aria-disabled="true" title="준비 중">제23회</span>
+      <span aria-disabled="true" title="준비 중">제24회</span>
+      <span aria-disabled="true" title="준비 중">제25회</span>
+    </nav>
+  </div>
+</section>
+<main class="container artists-main">
+    <form class="search-box" data-search="artist-table" role="search" aria-label="초대작가 검색">
+      <label class="sr-only" for="artist-table-field">검색 항목</label>
+      <select id="artist-table-field"><option value="name">작가명</option><option value="field">분야</option><option value="all">전체</option></select>
+      <label class="sr-only" for="artist-table-q">검색어</label>
+      <input id="artist-table-q" type="search" placeholder="검색어를 입력하세요">
+      <button type="submit"><span class="label">검색</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="sr-only">검색</span></button>
+    </form>
+
+    <table class="data-table" id="artist-table">
+      <caption class="sr-only">제19회 초대작가 목록</caption>
+      <thead>
+        <tr><th class="col-name" scope="col">작가명</th><th class="col-field" scope="col"><span class="sr-only">분야</span></th><th class="col-desc" scope="col"><span class="sr-only">경력</span></th></tr>
+      </thead>
+      <tbody>
+        <tr class="caption-row"><td colspan="3"><a href="artists-works.html">2026 제19회 한반도미술대전 초대작가 전시작품 소개</a></td></tr>
+        <tr data-row data-name="한지연" data-field="민화"><td class="col-name">한지연</td><td class="col-field">민화</td><td class="col-desc">원주전통문화교육원 강사 / 예랑민화연구소 대표</td></tr>
+        <tr data-row data-name="최희규" data-field="섬유아트"><td class="col-name">최희규</td><td class="col-field">섬유아트</td><td class="col-desc">국제전통미술대전 초대작가 / 한국전통문화예술진흥협회 초대작가</td></tr>
+        <tr data-row data-name="최유진" data-field="한국화"><td class="col-name">최유진</td><td class="col-field">한국화</td><td class="col-desc">원주미술협회 초대작가</td></tr>
+        <tr data-row data-name="최운기" data-field="궁중회화"><td class="col-name">최운기</td><td class="col-field">궁중회화</td><td class="col-desc">(사)한반도문화예술협회 이사장 / 목정출판 대표</td></tr>
+        <tr data-row data-name="최연종" data-field="섬유아트"><td class="col-name">최연종</td><td class="col-field">섬유아트</td><td class="col-desc">대한민국미술대전 입선</td></tr>
+        <tr data-row data-name="최가림" data-field="섬유아트"><td class="col-name">최가림</td><td class="col-field">섬유아트</td><td class="col-desc">전통명장협회 섬유명장</td></tr>
+        <tr data-row data-name="지은덕" data-field="민화"><td class="col-name">지은덕</td><td class="col-field">민화</td><td class="col-desc">한반도미술대전 초대작가</td></tr>
+        <tr data-row data-name="정경남" data-field="문인화"><td class="col-name">정경남</td><td class="col-field">문인화</td><td class="col-desc">신사임당미술대전 초대작가</td></tr>
+        <tr data-row data-name="임미자" data-field="문인화"><td class="col-name">임미자</td><td class="col-field">문인화</td><td class="col-desc">한반도미술대전 초대작가</td></tr>
+        <tr data-row data-name="이충길" data-field="민화"><td class="col-name">이충길</td><td class="col-field">민화</td><td class="col-desc">한반도미술대전 초대작가 / (사)한국시각디자이너협회 초대작가</td></tr>
+        <tr data-row data-name="유영남" data-field="서각"><td class="col-name">유영남</td><td class="col-field">서각</td><td class="col-desc">한국서화협회 서각명인, 초대작가, 지도자</td></tr>
+        <tr data-row data-name="원종순" data-field="문인화"><td class="col-name">원종순</td><td class="col-field">문인화</td><td class="col-desc">강원미술대전 초대작가 / 운곡세예문인화대전 초대작가</td></tr>
+        <tr data-row data-name="심문자" data-field="섬유아트"><td class="col-name">심문자</td><td class="col-field">섬유아트</td><td class="col-desc">한반도미술대전 초대작가</td></tr>
+        <tr data-row data-name="성기태" data-field="서각"><td class="col-name">성기태</td><td class="col-field">서각</td><td class="col-desc">한국서화협회 초대작가 / 한국서화협회 서각명인</td></tr>
+        <tr data-row data-name="박채성" data-field="문인화"><td class="col-name">박채성</td><td class="col-field">문인화</td><td class="col-desc">대한민국미술대전 초대작가 / 전국휘호대회 초대작가</td></tr>
+        <tr data-row data-name="박난실" data-field="섬유아트"><td class="col-name">박난실</td><td class="col-field">섬유아트</td><td class="col-desc">한반도미술대전 초대작가</td></tr>
+        <tr data-row data-name="박경숙" data-field="섬유아트"><td class="col-name">박경숙</td><td class="col-field">섬유아트</td><td class="col-desc">한얼문예박물관 초대작가</td></tr>
+        <tr data-row data-name="김영순" data-field="민화"><td class="col-name">김영순</td><td class="col-field">민화</td><td class="col-desc">도원민화연구소 소장</td></tr>
+        <tr data-row data-name="김연순" data-field="문인화"><td class="col-name">김연순</td><td class="col-field">문인화</td><td class="col-desc">대한민국미술대전 초대작가 / 운곡세예문인화대전 초대작가</td></tr>
+        <tr data-row data-name="권진국" data-field="서각"><td class="col-name">권진국</td><td class="col-field">서각</td><td class="col-desc">열린미술협회 초대작가</td></tr>
+        <tr data-row data-name="권영숙" data-field="한국화"><td class="col-name">권영숙</td><td class="col-field">한국화</td><td class="col-desc">대한민국전통서화대전 초대작가</td></tr>
+        <tr data-row data-name="강민희" data-field="문인화"><td class="col-name">강민희</td><td class="col-field">문인화</td><td class="col-desc">한반도미술대전 초대작가</td></tr>
+        <tr class="no-result" hidden><td colspan="3">검색 결과가 없습니다. 다른 검색어를 입력해 보세요.</td></tr>
+      </tbody>
+    </table>
+
+    <nav class="pager" aria-label="페이지">
+      <a href="#" aria-disabled="true">Prev</a><strong aria-current="page">1</strong><a href="#" aria-disabled="true">Next</a>
+    </nav>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <strong>(사)한반도문화예술협회</strong>
+    <address>
+      <span>주소: 강원특별자치도 원주시 강변로 525 (평원동)</span>
+      <span>E-mail. <a href="mailto:greencomm@hanmail.net">greencomm@hanmail.net</a></span>
+      <span>Tel. <a href="tel:07086219936">070-8621-9936</a></span>
+    </address>
+    <hr>
+    <small>© 2026 (사)한반도문화예술협회. All rights reserved.</small>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
