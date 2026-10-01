@@ -560,9 +560,9 @@
 
 /* ===== 공지 상세: 주소의 ?id= 값에 맞는 글만 보여주기 + 첨부파일 내려받기 ===== */
 (function () {
-  var id = new URLSearchParams(location.search).get("id") || "6";
   var arts = document.querySelectorAll("[data-notice-id]");
   if (!arts.length) return;   /* 공지 상세 페이지에서만 동작 */
+  var id = new URLSearchParams(location.search).get("id") || arts[0].getAttribute("data-notice-id");
   var found = false;
   arts.forEach(function (a) {
     var on = a.getAttribute("data-notice-id") === id;

@@ -28,20 +28,14 @@
     <table class="data-table notice-table" id="notice-table">
       <caption class="sr-only">알림마당 목록</caption>
       <thead><tr><th scope="col">제목</th><th class="col-date" scope="col">날짜</th></tr></thead>
-      <tbody>
-        <tr data-row data-title="제20회 한반도미술대전 초대작가 출품원서"><td class="col-title"><a href="notice-view.html?id=6">제20회 한반도미술대전 초대작가 출품원서</a></td><td class="col-date"><time datetime="2026-09-30">2026.09.30</time></td></tr>
-        <tr data-row data-title="제20회 한반도미술대전 출품원서"><td class="col-title"><a href="notice-view.html?id=5">제20회 한반도미술대전 출품원서</a></td><td class="col-date"><time datetime="2026-09-30">2026.09.30</time></td></tr>
-        <tr data-row data-title="제20회 한반도미술대전 개최요강"><td class="col-title"><a href="notice-view.html?id=4">제20회 한반도미술대전 개최요강</a></td><td class="col-date"><time datetime="2026-09-30">2026.09.30</time></td></tr>
-        <tr data-row data-title="제19회 한반도미술대전 초대작가 출품원서"><td class="col-title"><a href="notice-view.html?id=1">제19회 한반도미술대전 초대작가 출품원서</a></td><td class="col-date"><time datetime="2026-06-10">2026.06.10</time></td></tr>
-        <tr data-row data-title="제19회 한반도미술대전 출품원서"><td class="col-title"><a href="notice-view.html?id=2">제19회 한반도미술대전 출품원서</a></td><td class="col-date"><time datetime="2026-06-10">2026.06.10</time></td></tr>
-        <tr data-row data-title="제19회 한반도미술대전 개최요강"><td class="col-title"><a href="notice-view.html?id=3">제19회 한반도미술대전 개최요강</a></td><td class="col-date"><time datetime="2026-06-10">2026.06.10</time></td></tr>
-        <tr class="no-result" hidden><td colspan="2">검색 결과가 없습니다. 다른 검색어를 입력해 보세요.</td></tr>
-      </tbody>
+      <tbody data-render="notice-rows"></tbody>
     </table>
 
     <nav class="pager" id="notice-pager" aria-label="페이지"></nav>
 </main>
 <footer class="site-footer"></footer>
+<script src="data/site-data.js"></script>
+<script src="js/render.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

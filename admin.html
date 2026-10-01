@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>내용 편집기 | (사)한반도문화예술협회</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+<div class="ad-app">
+  <aside class="ad-side">
+    <div class="ad-brand">
+      <strong>내용 편집기</strong>
+      <span>(사)한반도문화예술협회</span>
+    </div>
+    <nav class="ad-nav" aria-label="편집 항목">
+      <button type="button" data-view="home">메인 사진</button>
+      <button type="button" data-view="editions">회차 관리</button>
+      <button type="button" data-view="awards">수상작</button>
+      <button type="button" data-view="artists">초대작가</button>
+      <button type="button" data-view="notices">알림마당</button>
+      <button type="button" data-view="help">사용 방법</button>
+    </nav>
+  </aside>
+
+  <div class="ad-main">
+    <header class="ad-top">
+      <div class="ad-status" id="ad-status" aria-live="polite"></div>
+      <div class="ad-actions">
+        <button type="button" class="ad-btn" id="ad-folder">사이트 폴더 연결</button>
+        <button type="button" class="ad-btn primary" id="ad-save">폴더에 저장</button>
+        <button type="button" class="ad-btn" id="ad-zip">바뀐 파일 내려받기(zip)</button>
+      </div>
+    </header>
+    <main class="ad-view" id="ad-view"></main>
+  </div>
+</div>
+
+<div class="ad-toast" id="ad-toast" role="status" hidden></div>
+
+<script src="data/site-data.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

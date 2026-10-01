@@ -15,12 +15,8 @@
 <script src="js/layout.js"></script>
 <main>
   <section class="hero-banner home" aria-label="대상 수상작">
-    <div class="banner-stage" data-banner>
-      <div class="banner-track"><div class="banner-slide"><img src="images/works/banner/01.png" alt="종합대상 섬유아트 신인숙 소나무 벽걸이" draggable="false"></div><div class="banner-slide"><img src="images/works/banner/02.png" alt="현대한국화 대상 황다미자 여백에 핀 꽃" draggable="false"></div><div class="banner-slide"><img src="images/works/banner/03.png" alt="문인화 대상 정차희 묵죽" draggable="false"></div><div class="banner-slide"><img src="images/works/banner/04.png" alt="민화 대상 최영순 파초도" draggable="false"></div><div class="banner-slide"><img src="images/works/banner/05.png" alt="한국화 대상 김기선 소나무와 학" draggable="false"></div><div class="banner-slide" aria-hidden="true"><img src="images/works/banner/01.png" alt="" draggable="false"></div><div class="banner-slide" aria-hidden="true"><img src="images/works/banner/02.png" alt="" draggable="false"></div><div class="banner-slide" aria-hidden="true"><img src="images/works/banner/03.png" alt="" draggable="false"></div><div class="banner-slide" aria-hidden="true"><img src="images/works/banner/04.png" alt="" draggable="false"></div><div class="banner-slide" aria-hidden="true"><img src="images/works/banner/05.png" alt="" draggable="false"></div></div>
-    </div>
-    <a class="hero-badge" href="notice.html" aria-label="한반도미술대전 출품지원서 다운로드 - 알림마당으로 이동">
-      <img src="images\19-image1/배너.png" alt="한반도미술대전 Hanbando Fine Arts Exhibition - 마크를 클릭하시고 출품지원서 다운받으세요" draggable="false">
-    </a>
+    <div class="banner-stage" data-banner data-render="banner"></div>
+    <a class="hero-badge" href="notice.html" data-render="badge" aria-label="한반도미술대전 출품지원서 다운로드 - 알림마당으로 이동"></a>
   </section>
 
   <section class="intro-band">
@@ -35,6 +31,8 @@
   </section>
 </main>
 <footer class="site-footer"></footer>
+<script src="data/site-data.js"></script>
+<script src="js/render.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

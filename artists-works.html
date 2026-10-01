@@ -10,37 +10,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body data-menu="artists">
+<body data-menu="artists" data-doc="초대작가 전시작품">
 <header class="site-header"></header>
 <script src="js/layout.js"></script>
 <div class="band-thin"></div>
 <main>
-  <h1 class="page-heading">2026 제19회 한반도미술대전<br>초대작가 전시작품 소개</h1>
-  <div class="container">
-    <div class="slider book" data-slider data-book data-title="초대작가 전시작품" role="region" aria-roledescription="carousel" aria-label="초대작가 전시작품 도록" tabindex="0">
-        <div class="book-stage ratio-2670x1808">
-          <div class="slider-track">
-            <div class="book-slide"><img src="images/works/artists/01.jpg" alt="초대작가 전시작품 도록 1쪽" loading="eager" draggable="false"></div>
-            <div class="book-slide"><img src="images/works/artists/02.jpg" alt="초대작가 전시작품 도록 2쪽" loading="lazy" draggable="false"><span class="center-line" aria-hidden="true"></span></div>
-            <div class="book-slide"><img src="images/works/artists/03.jpg" alt="초대작가 전시작품 도록 3쪽" loading="lazy" draggable="false"><span class="center-line" aria-hidden="true"></span></div>
-            <div class="book-slide"><img src="images/works/artists/04.jpg" alt="초대작가 전시작품 도록 4쪽" loading="lazy" draggable="false"><span class="center-line" aria-hidden="true"></span></div>
-            <div class="book-slide"><img src="images/works/artists/05.jpg" alt="초대작가 전시작품 도록 5쪽" loading="lazy" draggable="false"><span class="center-line" aria-hidden="true"></span></div>
-            <div class="book-slide"><img src="images/works/artists/06.jpg" alt="초대작가 전시작품 도록 6쪽" loading="lazy" draggable="false"><span class="center-line" aria-hidden="true"></span></div>
-            <div class="book-slide"><img src="images/works/artists/07.jpg" alt="초대작가 전시작품 도록 7쪽" loading="lazy" draggable="false"><span class="center-line" aria-hidden="true"></span></div>
-            <div class="book-slide"><img src="images/works/artists/08.jpg" alt="초대작가 전시작품 도록 8쪽" loading="lazy" draggable="false"><span class="center-line" aria-hidden="true"></span></div>
-            <div class="book-slide"><img src="images/works/artists/09.jpg" alt="초대작가 전시작품 도록 9쪽" loading="lazy" draggable="false"><span class="center-line" aria-hidden="true"></span></div>
-            <div class="book-slide"><img src="images/works/artists/10.jpg" alt="초대작가 전시작품 도록 10쪽" loading="lazy" draggable="false"><span class="center-line" aria-hidden="true"></span></div>
-            <div class="book-slide"><img src="images/works/artists/11.jpg" alt="초대작가 전시작품 도록 11쪽" loading="lazy" draggable="false"><span class="center-line" aria-hidden="true"></span></div>
-            <div class="book-slide"><img src="images/works/artists/12.jpg" alt="초대작가 전시작품 도록 12쪽" loading="lazy" draggable="false"><span class="center-line" aria-hidden="true"></span></div>
-          </div>
-        </div>
-        <button class="slider-btn prev" type="button" aria-label="이전 페이지"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
-        <button class="slider-btn next" type="button" aria-label="다음 페이지"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
-        <div class="book-footer"><div class="slider-dots"></div><p class="book-count" aria-live="polite"></p></div>
-      </div>
-  </div>
+  <h1 class="page-heading" data-render="ed-label" data-suffix="초대작가 전시작품 소개">한반도미술대전<br>초대작가 전시작품 소개</h1>
+  <div class="container" data-render="artist-book"></div>
 </main>
 <footer class="site-footer"></footer>
+<script src="data/site-data.js"></script>
+<script src="js/render.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
