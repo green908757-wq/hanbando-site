@@ -10,22 +10,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-<header class="site-header">
-  <div class="container">
-    <a class="logo" href="index.html" aria-label="(사)한반도문화예술협회 홈">
-      <img src="images/19-image1/한반도 로고.jpg" alt="(사)한반도문화예술협회">
-    </a>
-    <nav class="gnb" aria-label="주 메뉴">
-      <ul>
-        <li><a href="greeting.html">협회소개</a></li>
-        <li><a href="awards.html">수상작</a></li>
-        <li><a href="artists.html" aria-current="page">초대작가</a></li>
-        <li><a href="notice.html">공지사항</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+<body data-menu="artists">
+<header class="site-header"></header>
+<script src="js/layout.js"></script>
 <section class="title-band">
   <div class="container">
     <h1>초대작가 소개</h1>
@@ -41,12 +28,11 @@
   </div>
 </section>
 <main class="container artists-main">
-    <form class="search-box" data-search="artist-table" role="search" aria-label="초대작가 검색">
+    <form class="search-box" id="artist-search" data-list="artist-table" data-pager="artist-pager" data-per-page="15" role="search" aria-label="초대작가 검색">
       <label class="sr-only" for="artist-table-field">검색 항목</label>
       <select id="artist-table-field"><option value="name">작가명</option><option value="field">분야</option><option value="all">전체</option></select>
       <label class="sr-only" for="artist-table-q">검색어</label>
       <input id="artist-table-q" type="search" placeholder="검색어를 입력하세요">
-      <button type="submit"><span class="label">검색</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="sr-only">검색</span></button>
     </form>
 
     <table class="data-table" id="artist-table">
@@ -55,7 +41,7 @@
         <tr><th class="col-name" scope="col">작가명</th><th class="col-field" scope="col"><span class="sr-only">분야</span></th><th class="col-desc" scope="col"><span class="sr-only">경력</span></th></tr>
       </thead>
       <tbody>
-        <tr class="caption-row"><td colspan="3"><a href="artists-works.html">2026 제19회 한반도미술대전 초대작가 전시작품 소개</a></td></tr>
+        <tr class="caption-row"><td colspan="3"><a href="artists-works.html">2026 제19회 한반도미술대전 초대작가 전시작품 소개</a><a href="artists-works.html" class="btn-view" aria-label="2026 제19회 한반도미술대전 초대작가 전시작품 보기"><span>보기</span></a></td></tr>
         <tr data-row data-name="한지연" data-field="민화"><td class="col-name">한지연</td><td class="col-field">민화</td><td class="col-desc">원주전통문화교육원 강사 / 예랑민화연구소 대표</td></tr>
         <tr data-row data-name="최희규" data-field="섬유아트"><td class="col-name">최희규</td><td class="col-field">섬유아트</td><td class="col-desc">국제전통미술대전 초대작가 / 한국전통문화예술진흥협회 초대작가</td></tr>
         <tr data-row data-name="최유진" data-field="한국화"><td class="col-name">최유진</td><td class="col-field">한국화</td><td class="col-desc">원주미술협회 초대작가</td></tr>
@@ -82,22 +68,11 @@
       </tbody>
     </table>
 
-    <nav class="pager" aria-label="페이지">
-      <a href="#" aria-disabled="true">Prev</a><strong aria-current="page">1</strong><a href="#" aria-disabled="true">Next</a>
+    <nav class="pager" id="artist-pager" aria-label="페이지">
+      <strong aria-current="page">1</strong>
     </nav>
 </main>
-<footer class="site-footer">
-  <div class="container">
-    <strong>(사)한반도문화예술협회</strong>
-    <address>
-      <span>주소: 강원특별자치도 원주시 강변로 525 (평원동)</span>
-      <span>E-mail. <a href="mailto:greencomm@hanmail.net">greencomm@hanmail.net</a></span>
-      <span>Tel. <a href="tel:07086219936">070-8621-9936</a></span>
-    </address>
-    <hr>
-    <small>© 2026 (사)한반도문화예술협회. All rights reserved.</small>
-  </div>
-</footer>
+<footer class="site-footer"></footer>
 <script src="js/main.js"></script>
 </body>
 </html>

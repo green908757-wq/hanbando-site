@@ -9,43 +9,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-<style>
-/* figure 기본 여백(좌우 40px) 때문에 카드가 오른쪽으로 치우치던 것 바로잡기 */
-.overall-slider .slide { margin: 0; }
-/* 종합대상: 화살표·양옆 회색 없이, 원래 모양(회색 칸 안의 그림 + 흰 설명 칸) 그대로
-   카드 세로를 바깥 회색 바탕 높이(682px)에 꽉 맞춤 — 원래 530px → 1.287배 같은 비례 */
-@media (min-width: 768px) {
-  .overall-slider .slide {
-    grid-template-columns: 1fr 1fr;   /* 양옆 회색 없이 폭 가득 */
-    padding: 0;
-    min-height: 682px;
-    height: 682px;
-  }
-  .overall-slider .slide .art { padding: 44px 26px; }
-  .overall-slider .slide .art .ph { height: 594px; }
-  .overall-slider .slide .cat { font-size: 31px; }
-  .overall-slider .slide .prize { font-size: 18px; margin-top: 10px; }
-  .overall-slider .slide .artist { font-size: 31px; margin-top: 13px; }
-  .overall-slider .slide .work { font-size: 17px; margin-top: 10px; }
-}
-</style>
 </head>
-<body>
-<header class="site-header">
-  <div class="container">
-    <a class="logo" href="index.html" aria-label="(사)한반도문화예술협회 홈">
-      <img src="images/19-image1/한반도 로고.jpg" alt="(사)한반도문화예술협회">
-    </a>
-    <nav class="gnb" aria-label="주 메뉴">
-      <ul>
-        <li><a href="greeting.html">협회소개</a></li>
-        <li><a href="awards.html" aria-current="page">수상작</a></li>
-        <li><a href="artists.html">초대작가</a></li>
-        <li><a href="notice.html">공지사항</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+<body data-menu="awards">
+<header class="site-header"></header>
+<script src="js/layout.js"></script>
 <div class="band-thin"></div>
 <main>
   <h1 class="page-heading">2026 제19회 한반도미술대전<br>수상작품</h1>
@@ -70,7 +37,7 @@
     <section class="award-section" id="grand-prize" aria-labelledby="grand-prize-t">
       <div class="award-bar"><img class="laurel" src="images/19-image1/wgs2.png" alt=""><h2 id="grand-prize-t">부문대상</h2></div>
       <div class="slider book spread-book" data-slider data-book role="region" aria-roledescription="carousel" aria-label="부문대상 도록" tabindex="0">
-        <div class="book-stage" style="aspect-ratio: 1778 / 1201">
+        <div class="book-stage ratio-1778x1201">
           <div class="slider-track">
             <div class="book-slide"><div class="spread"><div class="page L cover"><div class="wreath"><img src="images/works/grand-prize/01.png" alt="" draggable="false" loading="lazy"><span>대상</span></div></div><div class="page R">
 <div class="head"><div class="tab"></div><div class="ht"><div class="t">한국화<i>|</i>대상</div><div class="s">제19회 韓半島美術大展運營委員會</div></div></div>
@@ -127,7 +94,7 @@
     <section class="award-section" id="excellence" aria-labelledby="excellence-t">
       <div class="award-bar"><img class="laurel" src="images/19-image1/wgs2.png" alt=""><h2 id="excellence-t">최우수상 우수상</h2></div>
       <div class="slider book" data-slider data-book role="region" aria-roledescription="carousel" aria-label="최우수상 · 우수상 도록" tabindex="0">
-        <div class="book-stage" style="aspect-ratio: 1778 / 1201">
+        <div class="book-stage ratio-1778x1201">
           <div class="slider-track">
             <div class="book-slide" id="prize-best"><img src="images/works/excellence/01.jpg" alt="최우수상 · 우수상 도록 1쪽" loading="eager" draggable="false"></div>
             <div class="book-slide"><img src="images/works/excellence/02.jpg" alt="최우수상 · 우수상 도록 2쪽" loading="lazy" draggable="false"><span class="center-line" aria-hidden="true"></span></div>
@@ -152,7 +119,7 @@
     <section class="award-section" id="encouragement" aria-labelledby="encouragement-t">
       <div class="award-bar"><img class="laurel" src="images/19-image1/wgs2.png" alt=""><h2 id="encouragement-t">장려상 삼채상 오채상</h2></div>
       <div class="slider book" data-slider data-book role="region" aria-roledescription="carousel" aria-label="장려상 · 삼채상 · 오채상 도록" tabindex="0">
-        <div class="book-stage" style="aspect-ratio: 2670 / 1808">
+        <div class="book-stage ratio-2670x1808">
           <div class="slider-track">
             <div class="book-slide" id="prize-encouragement"><img src="images/works/encouragement/01.jpg" alt="장려상 · 삼채상 · 오채상 도록 1쪽" loading="eager" draggable="false"></div>
             <div class="book-slide"><img src="images/works/encouragement/02.jpg" alt="장려상 · 삼채상 · 오채상 도록 2쪽" loading="lazy" draggable="false"></div>
@@ -177,7 +144,7 @@
     <section class="award-section" id="special" aria-labelledby="special-t">
       <div class="award-bar"><img class="laurel" src="images/19-image1/wgs2.png" alt=""><h2 id="special-t">특 선</h2></div>
       <div class="slider book" data-slider data-book role="region" aria-roledescription="carousel" aria-label="특선 도록" tabindex="0">
-        <div class="book-stage" style="aspect-ratio: 2670 / 1808">
+        <div class="book-stage ratio-2670x1808">
           <div class="slider-track">
             <div class="book-slide"><img src="images/works/special/01.jpg" alt="특선 도록 1쪽" loading="eager" draggable="false"></div>
             <div class="book-slide"><img src="images/works/special/02.jpg" alt="특선 도록 2쪽" loading="lazy" draggable="false"><span class="center-line" aria-hidden="true"></span></div>
@@ -202,7 +169,7 @@
     <section class="award-section" id="selected" aria-labelledby="selected-t">
       <div class="award-bar"><img class="laurel" src="images/19-image1/wgs2.png" alt=""><h2 id="selected-t">입 선</h2></div>
       <div class="slider book" data-slider data-book role="region" aria-roledescription="carousel" aria-label="입선 도록" tabindex="0">
-        <div class="book-stage" style="aspect-ratio: 2670 / 1808">
+        <div class="book-stage ratio-2670x1808">
           <div class="slider-track">
             <div class="book-slide"><img src="images/works/selected/01.jpg" alt="입선 도록 1쪽" loading="eager" draggable="false"></div>
             <div class="book-slide"><img src="images/works/selected/02.jpg" alt="입선 도록 2쪽" loading="lazy" draggable="false"><span class="center-line" aria-hidden="true"></span></div>
@@ -226,18 +193,7 @@
     </section>
   </div>
 </main>
-<footer class="site-footer">
-  <div class="container">
-    <strong>(사)한반도문화예술협회</strong>
-    <address>
-      <span>주소: 강원특별자치도 원주시 강변로 525 (평원동)</span>
-      <span>E-mail. <a href="mailto:greencomm@hanmail.net">greencomm@hanmail.net</a></span>
-      <span>Tel. <a href="tel:07086219936">070-8621-9936</a></span>
-    </address>
-    <hr>
-    <small>© 2026 (사)한반도문화예술협회. All rights reserved.</small>
-  </div>
-</footer>
+<footer class="site-footer"></footer>
 <script src="js/main.js"></script>
 </body>
 </html>
