@@ -24,6 +24,7 @@
   normalize(S);
 
   var pending = {};      /* 새로 고른 파일: 경로 → File */
+  var onSite = {};       /* 이미 사이트에 있는 파일 경로 — 같은 이름을 다시 쓰면 방문자 브라우저에 예전 사진이 남으므로 피함 */
   var blobUrl = {};      /* 미리보기용 주소: 경로 → blob: */
   var dirty = false;
   var dirHandle = null;
@@ -163,7 +164,8 @@
   /* 고른 파일을 dir 폴더에 둘 경로를 정하고(겹치면 _2, _3 …) 저장 목록에 올림 */
   function place(file, dir, replacing) {
     var used = usedPaths();
-    if (replacing) delete used[replacing];
+    if (replacing && !onSite[replacing]) delete used[replacing];
+    Object.keys(onSite).forEach(function (p) { used[p] = true; });
     var name = cleanName(file.name), dot = name.lastIndexOf(".");
     var base = dot > 0 ? name.slice(0, dot) : name, ext = dot > 0 ? name.slice(dot) : "";
     var path = dir + "/" + name, k = 2;
@@ -736,6 +738,7 @@
       var files = liveFiles();
       for (var i = 0; i < files.length; i++) await writeFile(dirHandle, files[i], pending[files[i]]);
       await writeFile(dirHandle, "data/site-data.js", new Blob([dataJS()], { type: "text/javascript" }));
+      Object.keys(pending).forEach(function (p) { onSite[p] = true; });
       pending = {}; dirty = false; status(); render();
       toast("저장했습니다. (내용 파일 1개" + (files.length ? " + 새 파일 " + files.length + "개" : "") + ") 사이트 페이지를 새로고침해 확인하세요.", 5000);
     } catch (e) { alert("저장하지 못했습니다: " + (e && e.message)); }
@@ -777,6 +780,7 @@
     for (var i = 0; i < files.length; i++) list.push({ name: files[i], data: new Uint8Array(await pending[files[i]].arrayBuffer()) });
     var a = el("a", { href: URL.createObjectURL(zipBlob(list)), download: "hanbando-update-" + today() + ".zip" });
     document.body.appendChild(a); a.click(); a.remove();
+    Object.keys(pending).forEach(function (p) { onSite[p] = true; });
     pending = {}; dirty = false; status(); render();   /* 미리보기는 그대로 유지 */
     toast("받은 zip 을 사이트 폴더에 풀어 덮어쓰세요. (내용 파일 1개" + (files.length ? " + 새 파일 " + files.length + "개" : "") + ")", 6000);
   }
@@ -818,5 +822,6 @@
   document.getElementById("ad-zip").addEventListener("click", saveZip);
   window.addEventListener("beforeunload", function (e) { if (dirty) { e.preventDefault(); e.returnValue = ""; } });
   if (!window.showDirectoryPicker) document.getElementById("ad-save").title = "크롬·엣지에서만 쓸 수 있습니다";
+  onSite = usedPaths();
   render();
 })();

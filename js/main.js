@@ -169,6 +169,7 @@
   }
   window.addEventListener("hashchange", openHash);
   window.addEventListener("load", openHash);
+  if (document.readyState === "complete") openHash();   /* 늦게 불러와진 경우 */
 
   /* ---------- 목록: 검색 + 페이지 넘김 (초대작가 / 알림마당 공통) ----------
      <form data-list="표 id" data-pager="페이지 번호 id" data-per-page="15" data-live>

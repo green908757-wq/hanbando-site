@@ -1,0 +1,10 @@
+# (사)한반도문화예술협회 — 캐시 설정 (아파치 호스팅용. 지원하지 않는 호스팅이면 무시됩니다)
+# HTML 과 내용 파일(site-data.js)은 매번 바뀌었는지 확인 → 수정 내용이 바로 보임
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html?)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+  <FilesMatch "site-data\.js$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+  </FilesMatch>
+</IfModule>
