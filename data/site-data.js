@@ -1,6 +1,6 @@
 /* (사)한반도문화예술협회 사이트 내용 — admin.html(편집기)에서 저장하면 자동으로 다시 만들어집니다.
    직접 고치셔도 되지만, 따옴표·쉼표가 하나라도 틀리면 사이트가 보이지 않으니 편집기를 쓰세요.
-   마지막 저장: 2026. 10. 6. 오후 12:31:50 */
+   마지막 저장: 2026. 10. 7. 오전 10:46:35 */
 window.SITE_DATA = {
   "home": {
     "banner": [
@@ -9,8 +9,8 @@ window.SITE_DATA = {
         "alt": "대상 민화 이충길 파초도 "
       },
       {
-        "src": "images/works/banner/02섬유아트.jpg",
-        "alt": "섬유아트 손소자 벽걸이"
+        "src": "images/works/banner/01대상.jpg",
+        "alt": "종합대상 섬유아트 신이숙 소마무"
       },
       {
         "src": "images/works/banner/03한국화.png",
