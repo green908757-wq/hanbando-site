@@ -1,201 +1,55 @@
-                                 Apache License
-                           Version 2.0, January 2004
-                        http://www.apache.org/licenses/
+작품 저작권 및 이용 안내
+(사)한반도문화예술협회
+제1조 (저작권의 귀속)이 홈페이지에 수록된 모든 미술작품(이미지, 작품 설명, 작가 정보 포함)의 저작권은 각 작가에게 있으며, 「저작권법」 및 관련 법령에 따라 보호됩니다. 협회는 작가의 위탁 또는 동의를 받아 전시 및 홍보 목적으로 작품을 게시합니다.
+제2조 (허용되는 이용)다음 경우에는 별도 허락 없이 이용할 수 있습니다.
+1. 개인의 비상업적 감상
+1. 홈페이지 주소(링크)의 공유
+1. 법령에서 허용하는 범위 내의 인용(작가명, 작품명, 출처 표시 필수)
+제3조 (금지 행위)작가와 협회의 사전 서면 허락 없이 다음 행위를 할 수 없습니다.
+1. 작품의 복제, 전송, 배포, 전시, 공연
+1. 작품의 변형, 편집, 합성, 2차적 저작물 작성
+1. 상품, 인쇄물, 광고, 홍보물 등 상업적 목적의 사용
+1. 작품 이미지의 무단 캡처, 다운로드 후 재게시
+1. 인공지능 학습 데이터 수집을 포함한 자동화된 수집(크롤링)
+1. 작가명, 작품명, 출처 표시의 삭제 또는 변경
+제4조 (이용 허락 절차)작품 이용을 원하는 경우 아래 사항을 담아 협회로 문의해 주세요.
+• 이용자(기관) 및 연락처
+• 이용할 작품명과 작가명
+• 이용 목적, 방법, 기간, 범위(매체, 수량 등)
+협회는 작가의 동의 여부를 확인한 뒤 회신하며, 이용료와 조건은 작가와 협의하여 정합니다. 허락은 반드시 서면(이메일 포함)으로 받아야 효력이 있습니다.
+제5조 (위반 시 조치)무단 사용이 확인되면 게시물 삭제 요구, 사용 중지 요청, 손해배상 청구, 민·형사상 법적 조치를 취할 수 있습니다.
+제6조 (작가 개별 조건)작가가 별도의 이용 조건을 표시한 작품은 그 조건을 우선 적용합니다.
+제7조 (문의)
+• 단체명: (사)한반도문화예술협회
+• 전화: 010-2224-9936 (해외: +82-10-2224-9936)
 
-   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+Artwork Copyright and Terms of Use
+Hanbando Culture &Arts Association (Incorporated Association)
+Article 1 (Ownership of Copyright)The copyright in all artworks featured on this website (including images, artwork descriptions, and artist information) belongs to the respective artists and is protected under the Copyright Act of the Republic of Korea and related laws and regulations. The Association displays the works for exhibition and promotional purposes with the artists' authorization or consent.
+Article 2 (Permitted Uses)The following uses are permitted without separate permission:
+1. Personal, non-commercial viewing
+1. Sharing the website address (link)
+1. Quotation within the scope permitted by law (the artist's name, the title of the work, and the source must be credited)
+Article 3 (Prohibited Acts)The following acts are prohibited without the prior written permission of the artist and the Association:
+1. Reproducing, transmitting, distributing, exhibiting, or performing the works
+1. Altering, editing, or compositing the works, or creating derivative works
+1. Using the works for commercial purposes, such as merchandise, printed materials, advertisements, or promotional materials
+1. Capturing or downloading images of the works without authorization and reposting them
+1. Automated collection (crawling), including collection of data for AI training
+1. Removing or altering the artist's name, the title of the work, or the source credit
+Article 4 (Procedure for Requesting Permission)If you wish to use a work, please contact the Association with the following information:
+• User (organization) and contact details
+• Title of the work and the artist's name
+• Purpose, method, period, and scope of use (media, quantity, etc.)
+The Association will confirm the artist's consent before replying, and any fees and conditions will be determined in consultation with the artist. Permission is valid only if given in writing (including by email).
+Article 5 (Measures Against Violations)If unauthorized use is confirmed, the Association may demand removal of the content, request that the use cease, claim damages, and take civil and criminal legal action.
+Article 6 (Individual Conditions Set by Artists)If an artist has specified separate terms of use for a work, those terms take precedence.
+Article 7 (Contact)
+• Organization: Hanbando Culture &Arts Association (Incorporated Association)
+• Phone: +82-10-2224-9936 (domestic: 010-2224-9936)
 
-   1. Definitions.
 
-      "License" shall mean the terms and conditions for use, reproduction,
-      and distribution as defined by Sections 1 through 9 of this document.
-
-      "Licensor" shall mean the copyright owner or entity authorized by
-      the copyright owner that is granting the License.
-
-      "Legal Entity" shall mean the union of the acting entity and all
-      other entities that control, are controlled by, or are under common
-      control with that entity. For the purposes of this definition,
-      "control" means (i) the power, direct or indirect, to cause the
-      direction or management of such entity, whether by contract or
-      otherwise, or (ii) ownership of fifty percent (50%) or more of the
-      outstanding shares, or (iii) beneficial ownership of such entity.
-
-      "You" (or "Your") shall mean an individual or Legal Entity
-      exercising permissions granted by this License.
-
-      "Source" form shall mean the preferred form for making modifications,
-      including but not limited to software source code, documentation
-      source, and configuration files.
-
-      "Object" form shall mean any form resulting from mechanical
-      transformation or translation of a Source form, including but
-      not limited to compiled object code, generated documentation,
-      and conversions to other media types.
-
-      "Work" shall mean the work of authorship, whether in Source or
-      Object form, made available under the License, as indicated by a
-      copyright notice that is included in or attached to the work
-      (an example is provided in the Appendix below).
-
-      "Derivative Works" shall mean any work, whether in Source or Object
-      form, that is based on (or derived from) the Work and for which the
-      editorial revisions, annotations, elaborations, or other modifications
-      represent, as a whole, an original work of authorship. For the purposes
-      of this License, Derivative Works shall not include works that remain
-      separable from, or merely link (or bind by name) to the interfaces of,
-      the Work and Derivative Works thereof.
-
-      "Contribution" shall mean any work of authorship, including
-      the original version of the Work and any modifications or additions
-      to that Work or Derivative Works thereof, that is intentionally
-      submitted to Licensor for inclusion in the Work by the copyright owner
-      or by an individual or Legal Entity authorized to submit on behalf of
-      the copyright owner. For the purposes of this definition, "submitted"
-      means any form of electronic, verbal, or written communication sent
-      to the Licensor or its representatives, including but not limited to
-      communication on electronic mailing lists, source code control systems,
-      and issue tracking systems that are managed by, or on behalf of, the
-      Licensor for the purpose of discussing and improving the Work, but
-      excluding communication that is conspicuously marked or otherwise
-      designated in writing by the copyright owner as "Not a Contribution."
-
-      "Contributor" shall mean Licensor and any individual or Legal Entity
-      on behalf of whom a Contribution has been received by Licensor and
-      subsequently incorporated within the Work.
-
-   2. Grant of Copyright License. Subject to the terms and conditions of
-      this License, each Contributor hereby grants to You a perpetual,
-      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
-      copyright license to reproduce, prepare Derivative Works of,
-      publicly display, publicly perform, sublicense, and distribute the
-      Work and such Derivative Works in Source or Object form.
-
-   3. Grant of Patent License. Subject to the terms and conditions of
-      this License, each Contributor hereby grants to You a perpetual,
-      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
-      (except as stated in this section) patent license to make, have made,
-      use, offer to sell, sell, import, and otherwise transfer the Work,
-      where such license applies only to those patent claims licensable
-      by such Contributor that are necessarily infringed by their
-      Contribution(s) alone or by combination of their Contribution(s)
-      with the Work to which such Contribution(s) was submitted. If You
-      institute patent litigation against any entity (including a
-      cross-claim or counterclaim in a lawsuit) alleging that the Work
-      or a Contribution incorporated within the Work constitutes direct
-      or contributory patent infringement, then any patent licenses
-      granted to You under this License for that Work shall terminate
-      as of the date such litigation is filed.
-
-   4. Redistribution. You may reproduce and distribute copies of the
-      Work or Derivative Works thereof in any medium, with or without
-      modifications, and in Source or Object form, provided that You
-      meet the following conditions:
-
-      (a) You must give any other recipients of the Work or
-          Derivative Works a copy of this License; and
-
-      (b) You must cause any modified files to carry prominent notices
-          stating that You changed the files; and
-
-      (c) You must retain, in the Source form of any Derivative Works
-          that You distribute, all copyright, patent, trademark, and
-          attribution notices from the Source form of the Work,
-          excluding those notices that do not pertain to any part of
-          the Derivative Works; and
-
-      (d) If the Work includes a "NOTICE" text file as part of its
-          distribution, then any Derivative Works that You distribute must
-          include a readable copy of the attribution notices contained
-          within such NOTICE file, excluding those notices that do not
-          pertain to any part of the Derivative Works, in at least one
-          of the following places: within a NOTICE text file distributed
-          as part of the Derivative Works; within the Source form or
-          documentation, if provided along with the Derivative Works; or,
-          within a display generated by the Derivative Works, if and
-          wherever such third-party notices normally appear. The contents
-          of the NOTICE file are for informational purposes only and
-          do not modify the License. You may add Your own attribution
-          notices within Derivative Works that You distribute, alongside
-          or as an addendum to the NOTICE text from the Work, provided
-          that such additional attribution notices cannot be construed
-          as modifying the License.
-
-      You may add Your own copyright statement to Your modifications and
-      may provide additional or different license terms and conditions
-      for use, reproduction, or distribution of Your modifications, or
-      for any such Derivative Works as a whole, provided Your use,
-      reproduction, and distribution of the Work otherwise complies with
-      the conditions stated in this License.
-
-   5. Submission of Contributions. Unless You explicitly state otherwise,
-      any Contribution intentionally submitted for inclusion in the Work
-      by You to the Licensor shall be under the terms and conditions of
-      this License, without any additional terms or conditions.
-      Notwithstanding the above, nothing herein shall supersede or modify
-      the terms of any separate license agreement you may have executed
-      with Licensor regarding such Contributions.
-
-   6. Trademarks. This License does not grant permission to use the trade
-      names, trademarks, service marks, or product names of the Licensor,
-      except as required for reasonable and customary use in describing the
-      origin of the Work and reproducing the content of the NOTICE file.
-
-   7. Disclaimer of Warranty. Unless required by applicable law or
-      agreed to in writing, Licensor provides the Work (and each
-      Contributor provides its Contributions) on an "AS IS" BASIS,
-      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
-      implied, including, without limitation, any warranties or conditions
-      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
-      PARTICULAR PURPOSE. You are solely responsible for determining the
-      appropriateness of using or redistributing the Work and assume any
-      risks associated with Your exercise of permissions under this License.
-
-   8. Limitation of Liability. In no event and under no legal theory,
-      whether in tort (including negligence), contract, or otherwise,
-      unless required by applicable law (such as deliberate and grossly
-      negligent acts) or agreed to in writing, shall any Contributor be
-      liable to You for damages, including any direct, indirect, special,
-      incidental, or consequential damages of any character arising as a
-      result of this License or out of the use or inability to use the
-      Work (including but not limited to damages for loss of goodwill,
-      work stoppage, computer failure or malfunction, or any and all
-      other commercial damages or losses), even if such Contributor
-      has been advised of the possibility of such damages.
-
-   9. Accepting Warranty or Additional Liability. While redistributing
-      the Work or Derivative Works thereof, You may choose to offer,
-      and charge a fee for, acceptance of support, warranty, indemnity,
-      or other liability obligations and/or rights consistent with this
-      License. However, in accepting such obligations, You may act only
-      on Your own behalf and on Your sole responsibility, not on behalf
-      of any other Contributor, and only if You agree to indemnify,
-      defend, and hold each Contributor harmless for any liability
-      incurred by, or claims asserted against, such Contributor by reason
-      of your accepting any such warranty or additional liability.
-
-   END OF TERMS AND CONDITIONS
-
-   APPENDIX: How to apply the Apache License to your work.
-
-      To apply the Apache License to your work, attach the following
-      boilerplate notice, with the fields enclosed by brackets "[]"
-      replaced with your own identifying information. (Don't include
-      the brackets!)  The text should be enclosed in the appropriate
-      comment syntax for the file format. We also recommend that a
-      file or class name and description of purpose be included on the
-      same "printed page" as the copyright notice for easier
-      identification within third-party archives.
-
-   Copyright [yyyy] [name of copyright owner]
-
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
+Notes
+• Your pasted version ends at the phone number. If you add an email line in Article 7, I can translate it too.
+• "(사)" means a legally incorporated association. If your English name is already registered or printed elsewhere (for example, on the association's seal or in its articles), use that official name instead of the one I used.
+• The phone line is written as "+82-10-2224-9936 (domestic: 010-2224-9936)" so overseas visitors can dial it directly.
