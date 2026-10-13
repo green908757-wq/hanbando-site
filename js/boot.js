@@ -6,7 +6,7 @@
    사용: <script src="js/boot.js?v=…" data-load="js/render.js js/main.js"></script> */
 (function () {
   "use strict";
-  var VERSION = "20261006";
+  var VERSION = "20261013";
   var me = document.currentScript;
   var load = (me && me.getAttribute("data-load")) || "js/render.js js/main.js";
   var list = ["data/site-data.js?t=" + Date.now()].concat(load.split(/\s+/).filter(Boolean).map(function (s) {

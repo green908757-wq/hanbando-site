@@ -1,5 +1,6 @@
 /* (사)한반도문화예술협회 — 내용 편집기(admin.html)
    data/site-data.js 를 읽어 화면에서 고치고, 다시 저장합니다.
+   - 사이트 주소/admin.html 로 열고 [사이트에 저장] → GitHub 저장소에 바로 기록, 1~2분 뒤 사이트에 반영 (추천)
    - 크롬·엣지: [사이트 폴더 연결] 후 [폴더에 저장] → 내용 파일과 새 사진이 사이트 폴더에 바로 저장
    - 그 밖의 브라우저: [바뀐 파일 내려받기(zip)] → 압축을 사이트 폴더에 풀어 덮어쓰기 */
 (function () {
@@ -659,7 +660,15 @@
   function viewHelp() {
     var h = el("div", { class: "ad-help" });
     h.innerHTML =
-      '<h1>사용 방법</h1><p class="ad-lead">이 편집기는 내 컴퓨터의 사이트 폴더 안에서 엽니다. 고친 뒤 저장하고, 바뀐 파일을 호스팅에 올리면 됩니다.</p>' +
+      '<h1>사용 방법</h1><p class="ad-lead">사이트 주소 뒤에 <code>/admin.html</code> 을 붙여 열고(예: <code>https://hanbandoart.co.kr/admin.html</code>), 고친 뒤 [사이트에 저장]을 누르면 1~2분 뒤 사이트에 반영됩니다.</p>' +
+      '<div class="ad-card"><h2>사이트에서 바로 편집하기 (추천)</h2><ol>' +
+      '<li>내용을 고친 뒤 위쪽 <b>[사이트에 저장]</b>을 누릅니다.</li>' +
+      '<li>처음 저장할 때만 GitHub 저장소 이름과 토큰을 묻습니다. [기억하기]를 켜 두면 다음부터 묻지 않습니다.<br>' +
+      '<span class="ad-hint">토큰 만들기: GitHub → Settings → Developer settings → Fine-grained tokens → Generate new token → Repository access 에서 이 저장소만 선택 → Permissions 의 Contents 를 Read and write 로.</span></li>' +
+      '<li>저장하면 편집기가 사이트에 반영됐는지 자동으로 확인해 알려 줍니다. 위쪽 [사이트 보기]로 바뀐 화면을 볼 수 있습니다.</li>' +
+      '<li>저장할 때마다 GitHub에 기록(커밋)이 남아 예전 내용으로 되돌릴 수 있습니다.</li>' +
+      '<li>공용 컴퓨터에서는 [기억하기]를 끄거나, 다 쓴 뒤 왼쪽 아래 [연결 끊기]를 누르세요.</li></ol></div>' +
+      '<p class="ad-hint" style="margin:0 0 12px">아래는 내 컴퓨터의 사이트 폴더로 편집하는 방법입니다.</p>' +
       '<div class="ad-card"><h2>1. 편집기 열기</h2><ol>' +
       '<li>사이트 폴더(index.html 이 있는 폴더)에서 <code>admin.html</code> 을 <b>크롬</b> 또는 <b>엣지</b>로 엽니다.</li>' +
       '<li>위쪽 [사이트 폴더 연결]을 누르고 그 사이트 폴더를 고른 뒤 ‘파일 수정 허용’을 눌러 주세요.</li></ol></div>' +
@@ -676,17 +685,17 @@
       '<p class="ad-hint">저장하지 않고 창을 닫으면 고친 내용이 사라집니다.</p></div>' +
       '<div class="ad-card"><h2>4. 사이트에 올리기(배포)</h2><ul>' +
       '<li>바뀐 파일만 올리면 됩니다: <code>data/site-data.js</code> 와 새로 추가한 사진(<code>images/…</code>).</li>' +
-      '<li><code>admin.html</code>, <code>css/admin.css</code>, <code>js/admin.js</code> 는 내 컴퓨터에서만 쓰는 편집기이므로 올리지 않아도 됩니다.</li></ul></div>';
+      '<li><code>admin.html</code>, <code>css/admin.css</code>, <code>js/admin.js</code> 도 저장소에 올려 두어야 사이트 주소로 편집기를 열 수 있습니다. 토큰은 이 파일들에 들어 있지 않으니 안심하세요.</li></ul></div>';
     return [h];
   }
 
   /* =========================================================
      저장
      ========================================================= */
-  function dataJS() {
+  function dataJS(stamp) {
     return "/* (사)한반도문화예술협회 사이트 내용 — admin.html(편집기)에서 저장하면 자동으로 다시 만들어집니다.\n" +
       "   직접 고치셔도 되지만, 따옴표·쉼표가 하나라도 틀리면 사이트가 보이지 않으니 편집기를 쓰세요.\n" +
-      "   마지막 저장: " + new Date().toLocaleString("ko-KR") + " */\n" +
+      "   마지막 저장: " + new Date().toLocaleString("ko-KR") + (stamp ? " · 저장번호: " + stamp : "") + " */\n" +
       "window.SITE_DATA = " + JSON.stringify(S, null, 2) + ";\n";
   }
   function liveFiles() {
@@ -786,6 +795,199 @@
   }
 
   /* =========================================================
+     GitHub 에 바로 저장 (사이트에서 admin.html 을 열어 어디서든 편집)
+     - 처음 저장할 때만 저장소 이름과 토큰을 묻습니다. [기억하기]를 켜 두면 다음부터 묻지 않습니다.
+     - 토큰은 이 파일에 들어 있지 않고, 이 브라우저에만 보관됩니다.
+     - 내용 파일과 새 사진을 한 번의 기록(커밋)으로 올립니다 → 예전 내용으로 언제든 되돌릴 수 있음
+     ========================================================= */
+  var SITE_REPO = "green908757-wq/hanbando-site";   /* 연결 창에 미리 채워지는 저장소 이름 */
+  var GH_KEY = "hanbando-admin-github";
+  var GH = { repo: "", token: "", branch: "", root: "", dataSha: "" };
+  var loadedJSON = JSON.stringify(window.SITE_DATA || {});
+
+  function ghSaved() {
+    try { return JSON.parse(localStorage.getItem(GH_KEY) || sessionStorage.getItem(GH_KEY) || "null"); } catch (e) { return null; }
+  }
+  function ghRemember(keep) {
+    try {
+      localStorage.removeItem(GH_KEY); sessionStorage.removeItem(GH_KEY);
+      (keep ? localStorage : sessionStorage).setItem(GH_KEY, JSON.stringify({ repo: GH.repo, token: GH.token }));
+    } catch (e) {}
+  }
+  function ghLogout() {
+    try { localStorage.removeItem(GH_KEY); sessionStorage.removeItem(GH_KEY); } catch (e) {}
+    GH = { repo: "", token: "", branch: "", root: "", dataSha: "" };
+    status(); toast("GitHub 연결을 끊고 저장된 토큰을 지웠습니다.");
+  }
+  function parseRepo(v) {
+    v = String(v || "").trim();
+    var m = v.match(/github\.com[\/:]([^\/\s]+)\/([^\/\s#?]+)/) || v.match(/^([^\/\s]+)\/([^\/\s]+)$/);
+    return m ? m[1] + "/" + m[2].replace(/\.git$/, "") : "";
+  }
+  async function gh(path, opt) {
+    opt = opt || {};
+    var r;
+    try {
+      r = await fetch("https://api.github.com" + path, {
+        method: opt.method || "GET", cache: "no-store",
+        headers: { "Authorization": "Bearer " + GH.token, "Accept": opt.accept || "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28" },
+        body: opt.body ? JSON.stringify(opt.body) : undefined
+      });
+    } catch (e) { throw new Error("GitHub에 연결하지 못했습니다. 인터넷 연결을 확인해 주세요."); }
+    if (!r.ok) {
+      var msg = ""; try { msg = (await r.json()).message || ""; } catch (e) {}
+      var err = new Error(r.status === 401 ? "토큰이 맞지 않거나 기한이 지났습니다. 새 토큰을 만들어 주세요." :
+        r.status === 403 ? "토큰에 쓰기 권한이 없습니다. Contents 권한을 Read and write 로 주세요." + (msg ? " (" + msg + ")" : "") :
+        r.status === 404 ? "저장소를 찾지 못했습니다. 저장소 이름과 토큰의 저장소 선택을 확인해 주세요." :
+        "GitHub 오류(" + r.status + ")" + (msg ? ": " + msg : ""));
+      err.status = r.status; throw err;
+    }
+    return opt.raw ? r.text() : r.json();
+  }
+  function b64(u8) {
+    var s = "";
+    for (var i = 0; i < u8.length; i += 0x8000) s += String.fromCharCode.apply(null, u8.subarray(i, i + 0x8000));
+    return btoa(s);
+  }
+  async function ghHead() {
+    var ref = await gh("/repos/" + GH.repo + "/git/ref/heads/" + encodeURIComponent(GH.branch));
+    var c = await gh("/repos/" + GH.repo + "/git/commits/" + ref.object.sha);
+    return { commit: ref.object.sha, tree: c.tree.sha };
+  }
+  /* 저장소의 내용 파일을 읽어 SITE_DATA 로 바꿈 */
+  async function ghReadData() {
+    var path = GH.root + "data/site-data.js";
+    var meta = await gh("/repos/" + GH.repo + "/contents/" + path.split("/").map(encodeURIComponent).join("/") + "?ref=" + encodeURIComponent(GH.branch));
+    var bytes = Uint8Array.from(atob(meta.content.replace(/\s/g, "")), function (c) { return c.charCodeAt(0); });
+    var text = new TextDecoder().decode(bytes);
+    var w = {}; new Function("window", text)(w);
+    return { sha: meta.sha, data: w.SITE_DATA };
+  }
+  async function ghConnect(repo, token) {
+    GH.repo = repo; GH.token = token;
+    var info = await gh("/repos/" + repo);
+    if (info.permissions && !info.permissions.push) throw new Error("이 토큰으로는 저장소에 쓸 수 없습니다. Contents 권한을 Read and write 로 주세요.");
+    GH.branch = info.default_branch || "main";
+    var head = await ghHead();
+    var tree = await gh("/repos/" + repo + "/git/trees/" + head.tree + "?recursive=1");
+    /* 사이트 위치: index.html 과 data/site-data.js 가 함께 있는 가장 위쪽 폴더 */
+    var paths = {}; (tree.tree || []).forEach(function (t) { if (t.type === "blob") paths[t.path] = true; });
+    var roots = Object.keys(paths).filter(function (p) { return /(^|\/)data\/site-data\.js$/.test(p) && paths[p.replace(/data\/site-data\.js$/, "") + "index.html"]; })
+      .map(function (p) { return p.replace(/data\/site-data\.js$/, ""); }).sort(function (a, b) { return a.length - b.length; });
+    if (!roots.length) throw new Error("저장소에서 data/site-data.js 를 찾지 못했습니다. 사이트 파일이 올라가 있는 저장소인지 확인해 주세요.");
+    GH.root = roots[0];
+    /* 이미 저장소에 있는 파일 이름은 새 사진에 쓰지 않음 (방문자 브라우저에 예전 사진이 남는 문제 방지) */
+    Object.keys(paths).forEach(function (p) { if (p.indexOf(GH.root) === 0) onSite[p.slice(GH.root.length)] = true; });
+    /* 화면에 불러온 내용이 저장소의 최신 내용과 다르면 최신 내용으로 맞춤 */
+    var remote = await ghReadData();
+    GH.dataSha = remote.sha;
+    if (JSON.stringify(remote.data) !== loadedJSON) {
+      if (!dirty || confirm("GitHub에 더 새로운 내용이 있습니다. 지금 고친 내용을 버리고 최신 내용을 불러올까요?\n([취소]를 누르면 지금 화면 내용으로 저장합니다)")) {
+        S = JSON.parse(JSON.stringify(remote.data)); normalize(S); loadedJSON = JSON.stringify(remote.data);
+        pending = {}; dirty = false; ui.ed = S.currentEdition; render();
+        toast("GitHub의 최신 내용을 불러왔습니다.");
+      }
+    }
+    status();
+  }
+  /* 처음 저장할 때만 연결 창을 띄움 */
+  function ghDialog() {
+    return new Promise(function (done) {
+      var saved = ghSaved() || {};
+      var repo = el("input", { class: "ad-input", value: saved.repo || SITE_REPO, placeholder: "아이디/저장소이름", spellcheck: "false" });
+      var token = el("input", { class: "ad-input", type: "password", placeholder: "github_pat_ 로 시작하는 값", spellcheck: "false" });
+      var keep = el("input", { type: "checkbox", checked: true });
+      var err = el("p", { class: "ad-note error", hidden: true });
+      var ok = btn("연결하고 저장", null, "primary");
+      var d = el("dialog", { class: "ad-dialog" }, [
+        el("h2", { text: "사이트에 저장하려면 GitHub 연결이 필요합니다" }),
+        el("p", { class: "ad-hint", text: "처음 한 번만 입력하면 됩니다. 토큰은 이 브라우저에만 보관되고 사이트 파일에는 들어가지 않습니다." }),
+        el("label", { class: "ad-field" }, [el("span", { text: "GitHub 저장소" }), repo]),
+        el("label", { class: "ad-field" }, [el("span", { text: "GitHub 토큰" }), token,
+          el("small", { class: "ad-hint", html: '<a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">토큰 만들기</a>에서 이 저장소만 고르고, Contents 권한을 <b>Read and write</b> 로 주세요.' })]),
+        el("label", { class: "ad-chk" }, [keep, " 이 브라우저에서 기억하기 (공용 컴퓨터에서는 끄세요)"]),
+        err,
+        el("div", { class: "ad-row ad-dialog-btns" }, [btn("취소", function () { d.close(); }), ok])
+      ]);
+      d.addEventListener("close", function () { d.remove(); done(!!GH.token && !!GH.branch); });
+      ok.addEventListener("click", async function () {
+        var r = parseRepo(repo.value), t = token.value.trim();
+        err.hidden = true;
+        if (!r) { err.textContent = "저장소 이름을 ‘아이디/저장소이름’ 모양으로 적어 주세요."; err.hidden = false; return; }
+        if (!t) { err.textContent = "GitHub 토큰을 붙여 넣어 주세요."; err.hidden = false; return; }
+        ok.disabled = true; ok.textContent = "연결하는 중…";
+        try { await ghConnect(r, t); ghRemember(keep.checked); d.close(); }
+        catch (e) { GH.branch = ""; err.textContent = e.message; err.hidden = false; ok.disabled = false; ok.textContent = "연결하고 저장"; }
+      });
+      document.body.appendChild(d); d.showModal();
+      setTimeout(function () { (repo.value ? token : repo).focus(); }, 30);
+    });
+  }
+
+  var saving = false;
+  async function saveGitHub() {
+    if (saving) return;
+    if (!GH.branch && !(await ghDialog())) return;
+    if (!confirmWarn()) return;
+    saving = true;
+    var b = document.getElementById("ad-gh-save"); b.disabled = true; b.textContent = "저장하는 중…";
+    try {
+      /* 그 사이 다른 사람이 저장했는지 확인 */
+      var now = await ghReadData();
+      if (now.sha !== GH.dataSha && !confirm("편집기를 연 뒤 다른 곳에서 내용이 저장되었습니다.\n그래도 지금 화면 내용으로 덮어쓸까요?")) return;
+      var stamp = String(Date.now());
+      var files = liveFiles();
+      var items = [{ path: "data/site-data.js", bytes: new TextEncoder().encode(dataJS(stamp)) }];
+      for (var i = 0; i < files.length; i++) items.push({ path: files[i], bytes: new Uint8Array(await pending[files[i]].arrayBuffer()) });
+      var tree = [];
+      for (var j = 0; j < items.length; j++) {
+        b.textContent = "올리는 중… (" + (j + 1) + "/" + items.length + ")";
+        var blob = await gh("/repos/" + GH.repo + "/git/blobs", { method: "POST", body: { content: b64(items[j].bytes), encoding: "base64" } });
+        tree.push({ path: GH.root + items[j].path, mode: "100644", type: "blob", sha: blob.sha });
+      }
+      var msg = "편집기에서 내용 저장" + (files.length ? " (새 파일 " + files.length + "개)" : "");
+      for (var tries = 0; ; tries++) {
+        var head = await ghHead();
+        var t = await gh("/repos/" + GH.repo + "/git/trees", { method: "POST", body: { base_tree: head.tree, tree: tree } });
+        var c = await gh("/repos/" + GH.repo + "/git/commits", { method: "POST", body: { message: msg, tree: t.sha, parents: [head.commit] } });
+        try { await gh("/repos/" + GH.repo + "/git/refs/heads/" + encodeURIComponent(GH.branch), { method: "PATCH", body: { sha: c.sha } }); break; }
+        catch (e) { if (tries < 2 && (e.status === 409 || e.status === 422)) continue; throw e; }
+      }
+      GH.dataSha = (await ghReadData()).sha;
+      loadedJSON = JSON.stringify(S);
+      Object.keys(pending).forEach(function (p) { onSite[p] = true; });
+      pending = {}; dirty = false; status(); render();
+      toast("GitHub에 저장했습니다. 사이트에 반영되는지 확인하고 있습니다(보통 1~2분).", 6000);
+      watchDeploy(stamp);
+    } catch (e) {
+      alert("저장하지 못했습니다: " + (e && e.message));
+    } finally {
+      saving = false; b.disabled = false; b.textContent = "사이트에 저장";
+    }
+  }
+  /* 실제 사이트에 반영됐는지 확인 (사이트 주소로 연 경우에만) */
+  function watchDeploy(stamp) {
+    if (!/^https?:$/.test(location.protocol)) return;
+    var started = Date.now();
+    (function poll() {
+      fetch("data/site-data.js?t=" + Date.now(), { cache: "no-store" }).then(function (r) { return r.text(); }).then(function (txt) {
+        if (txt.indexOf("저장번호: " + stamp) >= 0) { toast("사이트에 반영됐습니다. [사이트 보기]로 바뀐 화면을 확인하세요.", 7000); return; }
+        if (Date.now() - started > 5 * 60 * 1000) {
+          toast("GitHub에는 저장됐지만 5분이 지나도 사이트에 반영되지 않았습니다. 저장소의 Actions 탭과 Settings → Pages 를 확인해 주세요.", 10000);
+          return;
+        }
+        setTimeout(poll, 10000);
+      }).catch(function () { setTimeout(poll, 15000); });
+    })();
+  }
+  async function ghAutoConnect() {
+    var saved = ghSaved();
+    if (!saved || !saved.repo || !saved.token) return;
+    try { await ghConnect(saved.repo, saved.token); }
+    catch (e) { GH.branch = ""; toast("GitHub 자동 연결 실패: " + e.message + " 저장할 때 다시 입력해 주세요.", 7000); status(); }
+  }
+
+  /* =========================================================
      그리기
      ========================================================= */
   function status() {
@@ -794,9 +996,11 @@
     s.innerHTML = "";
     s.appendChild(el("span", {}, [
       "대표 회차 ", el("b", { text: S.currentEdition ? "제" + S.currentEdition + "회" : "없음" }), " · ",
-      dirty ? el("span", { class: "dirty", text: "● 저장하지 않은 변경 있음" + (n ? " (새 파일 " + n + "개)" : "") }) : el("span", { text: "저장된 상태" }), " · 폴더: ",
-      el("b", { text: dirHandle ? dirHandle.name : "연결 안 됨" })
+      dirty ? el("span", { class: "dirty", text: "● 저장하지 않은 변경 있음" + (n ? " (새 파일 " + n + "개)" : "") }) : el("span", { text: "저장된 상태" }), " · GitHub: ",
+      el("b", { text: GH.branch ? GH.repo : "연결 안 됨" }),
+      dirHandle ? " · 폴더: " : null, dirHandle ? el("b", { text: dirHandle.name }) : null
     ]));
+    document.getElementById("ad-gh-logout").hidden = !GH.branch && !ghSaved();
     document.getElementById("ad-folder").textContent = dirHandle ? "폴더 다시 고르기" : "사이트 폴더 연결";
   }
   function go(view) { ui.view = view; window.scrollTo(0, 0); render(); }
@@ -820,8 +1024,12 @@
   document.getElementById("ad-folder").addEventListener("click", connectFolder);
   document.getElementById("ad-save").addEventListener("click", saveFolder);
   document.getElementById("ad-zip").addEventListener("click", saveZip);
+  document.getElementById("ad-gh-save").addEventListener("click", saveGitHub);
+  document.getElementById("ad-gh-logout").addEventListener("click", function () { if (confirm("GitHub 연결을 끊고 이 브라우저에 저장된 토큰을 지울까요?")) ghLogout(); });
+  document.getElementById("ad-view-site").addEventListener("click", function () { window.open("index.html?t=" + Date.now(), "_blank"); });
   window.addEventListener("beforeunload", function (e) { if (dirty) { e.preventDefault(); e.returnValue = ""; } });
   if (!window.showDirectoryPicker) document.getElementById("ad-save").title = "크롬·엣지에서만 쓸 수 있습니다";
   onSite = usedPaths();
   render();
+  ghAutoConnect();
 })();

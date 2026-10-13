@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/admin.css?v=20261001">
+<link rel="stylesheet" href="css/admin.css?v=20261013">
 </head>
 <body>
 <div class="ad-app">
@@ -25,15 +25,23 @@
       <button type="button" data-view="notices">알림마당</button>
       <button type="button" data-view="help">사용 방법</button>
     </nav>
+    <button type="button" class="ad-logout" id="ad-gh-logout" hidden>연결 끊기 (저장된 토큰 지우기)</button>
   </aside>
 
   <div class="ad-main">
     <header class="ad-top">
       <div class="ad-status" id="ad-status" aria-live="polite"></div>
       <div class="ad-actions">
-        <button type="button" class="ad-btn" id="ad-folder">사이트 폴더 연결</button>
-        <button type="button" class="ad-btn primary" id="ad-save">폴더에 저장</button>
-        <button type="button" class="ad-btn" id="ad-zip">바뀐 파일 내려받기(zip)</button>
+        <button type="button" class="ad-btn primary" id="ad-gh-save">사이트에 저장</button>
+        <button type="button" class="ad-btn" id="ad-view-site">사이트 보기</button>
+        <details class="ad-more">
+          <summary class="ad-btn">컴퓨터 폴더로 저장 ▾</summary>
+          <div class="ad-more-menu">
+            <button type="button" class="ad-btn" id="ad-folder">사이트 폴더 연결</button>
+            <button type="button" class="ad-btn" id="ad-save">폴더에 저장</button>
+            <button type="button" class="ad-btn" id="ad-zip">바뀐 파일 내려받기(zip)</button>
+          </div>
+        </details>
       </div>
     </header>
     <main class="ad-view" id="ad-view"></main>
@@ -42,6 +50,6 @@
 
 <div class="ad-toast" id="ad-toast" role="status" hidden></div>
 
-<script src="js/boot.js?v=20261001" data-load="js/admin.js"></script>
+<script src="js/boot.js?v=20261013" data-load="js/admin.js"></script>
 </body>
 </html>
